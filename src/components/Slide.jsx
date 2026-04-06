@@ -3,7 +3,12 @@ import "./slide.scss"
 
 const Slide = () => {
   return (
+    <>
+
+ 
    <footer className='slide'>
+
+   
     <div className="icon github"><img src="./slide-icons/github.svg" alt="" /></div>
     <div className="icon note"><img src="./slide-icons/note.svg" alt="" /></div>
     
@@ -14,6 +19,7 @@ const Slide = () => {
     <div className="icon calender"><img src="./slide-icons/calender.svg" alt="" /></div>
     <div className="icon link"><img src="./slide-icons/link.svg" alt="" /></div>
    </footer>
+   </>
   )
 }
 

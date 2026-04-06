@@ -1,18 +1,16 @@
 import React from 'react'
 import "./app.scss"
-import Slide from './components/slide/Slide'
+import Hero from './components/Hero'
+import Slide from './components/Slide'
 
-import Hero from './components/hero-txt/Hero'
 
 const App = () => {
   return (
     <>
-    <main>
-      
+    <main>      
       <Hero/>
       <Slide/>
-    </main>
-      
+    </main>   
     </>
   )
 }
