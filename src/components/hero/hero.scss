@@ -1,0 +1,71 @@
+$font-ai: "SF Pro Display", "Segoe UI Variable Display",
+           "Helvetica Neue", system-ui, -apple-system,
+           BlinkMacSystemFont, sans-serif;
+
+@keyframes marquee-ltr {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes marquee-rtl {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.hero {
+  --edge-fade: clamp(70px, 10vw, 150px);
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--edge-fade),
+    #000 calc(100% - var(--edge-fade)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--edge-fade),
+    #000 calc(100% - var(--edge-fade)),
+    transparent 100%
+  );
+
+  &__marquee {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: -150px;
+  }
+
+  &__track {
+    display: flex;
+    width: max-content;         // shrink-wrap both h1s side by side
+
+    &--ltr {
+      animation: marquee-ltr 12s linear infinite;
+    }
+
+    &--rtl {
+      animation: marquee-rtl 12s linear infinite;
+    }
+
+    h1 {
+      white-space: nowrap;
+      margin: 0;
+      padding-right: 6rem;      // gap between the two copies
+      flex-shrink: 0;
+
+      font-family: $font-ai;
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+      font-weight: 700;
+      line-height: 0.82;
+      letter-spacing: -0.02em;
+      color: #444444;
+      opacity: 0.45;                        // low opacity
+    }
+  }
+}
